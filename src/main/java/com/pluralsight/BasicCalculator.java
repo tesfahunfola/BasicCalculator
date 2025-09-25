@@ -34,6 +34,7 @@ public class BasicCalculator {
         System.out.println("Please select option: "+ calc);
         scanner.nextLine();
 
+
         double result = num1 * num2;
 
         System.out.println("Result: "+result);
