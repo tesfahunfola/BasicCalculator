@@ -27,19 +27,31 @@ public class BasicCalculator {
 
         System.out.print("Enter the second number: ");
         double num2 = scanner.nextDouble();
-
-        System.out.println("What do you want to do?");
-        System.out.print("Possible calculations: \n (A)dd \n (S)ubtract \n (M)ultiply \n (D)ivide \n");
-        String calc = scanner.nextLine();
-        System.out.println("Please select option: "+ calc);
         scanner.nextLine();
 
+        System.out.print("Possible calculations: \n (A)dd \n (S)ubtract \n (M)ultiply \n (D)ivide \n");
 
-        double result = num1 * num2;
+        String operation = scanner.nextLine();
 
-        System.out.println("Result: "+result);
+        Double result = 0.0;
+        String operator;
 
+        if(operation.equalsIgnoreCase("A")){
+           result= num1 + num2;
+            operator= "+";
+        } else if (operation.equalsIgnoreCase("S")) {
+            result = num1 - num2;
+            operator = "-";
 
+        } else if (operation.equalsIgnoreCase("M")) {
+            result = num1 * num2;
+            operator = "*";
+        }else {
+            result = num1 / num2;
+            operator = "/";
+        }
+
+        System.out.printf("%f %s %f = %f",num1, operator, num2, result);
 
 
     }
